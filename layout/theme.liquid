@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js " lang="{{ shop.locale }}">
+  <head>
+	<!-- Added by AVADA SEO Suite -->
+	{% include 'avada-seo' %}
+	<!-- /Added by AVADA SEO Suite -->
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HS247MKTFV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HS247MKTFV');
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11219417347"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11219417347');
+</script>
+
+
+    
+    
+    <meta name="google-site-verification" content="2G7ye1rmEzZhCvvb8BYLyD_84woZ7Al-gHBm8joU4cc" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_header_bg }}">
+    {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+    <link rel="canonical" href="{{ canonical_url }}">
+    <title>
+      {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+    </title>
+
+
+
+    {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+    {%- include 'social-meta-tags' -%}
+    {%- include 'header-css' -%}
+    {{ content_for_header }}
+  </head>
+  <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} body-theme {% if settings.productpage == 'product-2' or settings.productpage == 'product-6' or settings.productpage == 'product-7' %} product-hide-breadcrumb {% endif %}" >
+    {%- section 'announcement-bar' -%}
+    {%- include 'loading' -%}
+    {%- include 'header' -%}
+    <div class="page-container page-element is-moved-by-drawer">
+      {%- include 'breadcrumb' -%}
+      <main class="main-content" id="MainContent" role="main">
+        {%- if settings.enable_animationscroll -%}<div id ="js-scroll">{% endif%}
+          {%- if settings.enable_animationscroll -%}<div data-scroll-section>{% endif%}
+        {%- include 'slideshow' -%}
+        {%- if settings.enable_animationscroll -%}</div>{% endif%}
+        {{ content_for_layout }}
+        {%- if settings.enable_animationscroll -%}</div>{% endif%}
+      </main>
+      {%- include 'footer' -%}
+      {%- include 'popup-newsletter' -%}
+      {%- section 'product-suggest' -%}
+      {%- section 'recently-viewed' -%}
+    </div>
+    {%- include 'cookie-policy' -%}
+    {%- include 'back-to-top' -%}
+    {%- include 'menu-mobile' -%}
+    {%- include 'notify-popup' -%}
+    {%- include 'bottom-contents' -%}
+    {%- include 'quickview' -%}
+    {%- include 'popup-compare' -%}
+    {%- include 'header-js' -%}
+    {%- if settings.show_multiple_currencies -%}
+    {{ "/services/javascripts/currencies.js" | script_tag }}
+    {%- endif -%}
+
+
+    <!-- Stamped -->
+<script 
+async 
+type="text/javascript" 
+data-api-key="YOUR_PUBLIC-API-KEY" 
+id="stamped-script-widget" 
+src="https://cdn1.stamped.io/files/widget.min.js">
+</script>
+<!-- End Stamped -->
+  {{ '//cdn.shopify.com/s/files/1/0194/1736/6592/t/1/assets/booster-page-speed-optimizer.js?23' | script_tag }}
+</body>
+</html>
